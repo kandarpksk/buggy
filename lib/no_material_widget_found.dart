@@ -28,12 +28,11 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // this is not how one writes code,
-    // but it's easier for to demo errors
+    // this is not how such code is written,
+    // but it's easier for error (fixing) demos
     var c = new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        // TODO: how can this be fixed differently
         // + formatting within the stack trace
         // toggle implementation details?
         new Padding(
@@ -66,6 +65,12 @@ class _ExampleWidgetState extends State<ExampleWidget> {
     // return new Scaffold(body: c);
   }
 }
+
+// need a more realistic scenario, although this one is instructive
+// in that [we could point to documentation about building layouts]
+
+// "I am new to Flutter and I was trying do execute the example here.
+// I just want to use the TextField widget to get some user input."
 
 // code from original post
 
