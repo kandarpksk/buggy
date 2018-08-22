@@ -33,8 +33,6 @@ class _ExampleWidgetState extends State<ExampleWidget> {
     var c = new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        // + formatting within the stack trace
-        // toggle implementation details?
         new Padding(
           padding: new EdgeInsets.all(50.0),
           child: new TextField(
