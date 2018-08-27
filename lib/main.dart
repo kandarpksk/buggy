@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'no_material_widget_found.dart';
+import 'unbounded_viewport.dart';
+import 'no_host_specified.dart';
 import 'argument_type_cannot_be_assigned.dart';
 import 'dynamic_not_a_subtype.dart';
-import 'no_host_specified.dart';
 
 void main() => runApp(new MyApp());
 
@@ -49,16 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             makeDemoEntry(
-                context, "1. No Material widget found", NoMaterialWidgetFound(),
-                Colors.white),
+                context, "1. No Material widget", NoMaterialWidgetFound()),
             makeDemoEntry(
-                context, "2. No host specified", NoHostSpecified(), Colors.white),
+                context, "2. Unbounded viewport", UnboundedViewport()),
+            makeDemoEntry(
+                context, "3. No host specified", NoHostSpecified()),
             // TODO: make a separator
             makeDemoEntry(
                 context, "A. Argument type can't be assigned **",
                 ArgumentTypeCannotBeAssigned()),
             makeDemoEntry(
-                context, "B. dynamic not a subtype *", DynamicNotSubtype()),
+                context, "B. [dynamic] not a subtype *", DynamicNotSubtype()),
           ],
         ),
       ),
