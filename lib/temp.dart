@@ -26,44 +26,23 @@ class ExampleWidget extends StatefulWidget {
 class _ExampleWidgetState extends State<ExampleWidget> {
   final TextEditingController _controller = new TextEditingController();
 
-  @override
-  Widget build(BuildContext context) {
-    // this is not how such code is written,
-    // but it's easier for error (fixing) demos
-    var c = new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        new Padding(
-          padding: new EdgeInsets.all(50.0),
-          child: new Scaffold( // example fix
-            body: new TextField(
-              controller: _controller,
-              decoration: new InputDecoration(
-                hintText: 'Type something',
-              ),
-            ),
+@override
+Widget build(BuildContext context) {
+  return new Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      new Padding(
+        padding: new EdgeInsets.all(50.0),
+        child: new TextField(
+          controller: _controller,
+          decoration: new InputDecoration(
+            hintText: 'Type something',
           ),
         ),
-        new RaisedButton(
-          onPressed: () {
-            showDialog(
-              context: context,
-              child: new AlertDialog(
-                title: new Text(_controller.text == '' ?
-                  'It seems you didn\'t type anything  :(' :
-                  'What you typed'),
-                content: new Text(_controller.text),
-              ),
-            );
-          },
-          child: new Text('DONE'),
-        ),
-      ],
-    );
-    return c;
-    // this is the fix
-    // return new Scaffold(body: c);
-  }
+      ),
+    ],
+  );
+}
 }
 
 // need a more realistic scenario, although this one is instructive
@@ -77,7 +56,7 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 // /// State for [ExampleWidget] widgets.
 // class _ExampleWidgetState extends State<ExampleWidget> {
 //   final TextEditingController _controller = new TextEditingController();
-//   
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return new Column(
